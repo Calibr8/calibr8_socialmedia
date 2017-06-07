@@ -1,0 +1,15 @@
+{
+    "name": "calibrate/calibr8_socialmedia",
+    "description": "Creates blocks with social media links and sharing buttons.",
+    "type": "drupal-custom",
+    "keywords": ["Drupal 8","GTM"],
+    "homepage": "https://github.com/stevenvdhout/calibr8_socialmedia",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Wouter Dierick",
+            "email": "wouter.dierick@calibrate.be",
+            "homepage": "http://www.calibrate.be"
+        }
+    ]
+}

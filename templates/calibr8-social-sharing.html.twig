@@ -1,0 +1,6 @@
+
+<ul id="sharing-menu" class="menu social-menu">
+{% for link in links %}
+  <li><a href="{{ link.url }}" {{ link.attributes }} ><span class="element-invisible">{{ link.title }}</span></a></li>
+{% endfor %}
+</ul>

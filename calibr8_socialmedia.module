@@ -1,0 +1,18 @@
+<?php
+
+function calibr8_socialmedia_theme() {
+  return array(
+    'calibr8_social_links' => array(
+      'variables' => array(
+        'title' => NULL,
+        'links' => NULL,
+      ),
+    ),
+    'calibr8_social_sharing' => array(
+      'variables' => array(
+        'title' => NULL,
+        'links' => NULL,
+      ),
+    ),
+  );
+}

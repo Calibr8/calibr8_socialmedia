@@ -1,0 +1,5 @@
+name: Calibr8 Social Media
+description: Creates blocks with social media links and sharing buttons.
+package: Calibr8
+type: module
+core: 8.x
