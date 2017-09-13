@@ -29,6 +29,7 @@ class SocialMediaBlock extends BlockBase  {
       'googleplus' => $this->t('Google+'),
       'instagram' => $this->t('Instagram'),
       'reddit' => $this->t('Reddit'),
+      'youtube' => $this->t('YouTube'),
     );
   }
 
