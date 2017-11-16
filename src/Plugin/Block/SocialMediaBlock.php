@@ -2,7 +2,7 @@
 
 namespace Drupal\calibr8_socialmedia\Plugin\Block;
 
-use Drupal\Component\Utility\SortArray;
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
@@ -16,10 +16,10 @@ use Drupal\Core\Template\Attribute;
  *   admin_label = @Translation("Social media block"),
  * )
  */
-class SocialMediaBlock extends BlockBase  {
+class SocialMediaBlock extends BlockBase {
 
   /**
-   * Return a list of available platforms
+   * Return a list of available platforms.
    */
   private function getPlatforms() {
     return array(
@@ -84,7 +84,7 @@ class SocialMediaBlock extends BlockBase  {
 
     }
 
-    // do our own sorting, because drupal does not seem to do this
+    // Do our own sorting, because drupal does not seem to do this.
     uasort($rows, '\Drupal\Component\Utility\SortArray::sortByWeightProperty');
     $form['table'] = array_merge($form['table'], $rows);
 
@@ -100,7 +100,19 @@ class SocialMediaBlock extends BlockBase  {
       $this->configuration[$platform]['link'] = $form_state->getValue(array('table', $platform, 'element'));
       $this->configuration[$platform]['weight'] = $form_state->getValue(array('table', $platform, 'weight'));
     }
+  }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function blockValidate($form, FormStateInterface $form_state) {
+
+    foreach ($this->getPlatforms() as $platform => $name) {
+      $url = $form_state->getValue(array('table', $platform, 'element'));
+      if ($url && !UrlHelper::isValid($url, TRUE)) {
+        $form_state->setError($form['table'][$platform], $this->t('Invalid url. Make sure to add "http://" or "https://" (prefered).'));
+      }
+    }
   }
 
   /**
