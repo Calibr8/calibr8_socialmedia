@@ -3,7 +3,7 @@
     "description": "Creates blocks with social media links and sharing buttons.",
     "type": "drupal-custom",
     "keywords": ["Drupal 8","GTM"],
-    "homepage": "https://github.com/stevenvdhout/calibr8_socialmedia",
+    "homepage": "https://github.com/Calibr8/calibr8_socialmedia",
     "license": "GPL-2.0+",
     "authors": [
         {
