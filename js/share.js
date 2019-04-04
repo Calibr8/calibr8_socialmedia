@@ -7,7 +7,7 @@ var social_share_height = 350;
 
 (function ($) {
 
-  Drupal.behaviors.q8SocialShare = {
+  Drupal.behaviors.socialShare = {
     attach: function(context, settings) {
 
       var $socialshare_menu = $('#sharing-menu');
@@ -18,7 +18,7 @@ var social_share_height = 350;
           e.preventDefault();
           var top = (screen.height / 2) - (social_share_width / 2);
           var left = (screen.width / 2) - (social_share_height / 2);
-          window.open(link, 'q8-social-share', 'top=' + top + ',left=' + left + ',toolbar=0,status=0,width=' + social_share_width + ',height=' + social_share_height);
+          window.open(link, 'social-share', 'top=' + top + ',left=' + left + ',toolbar=0,status=0,width=' + social_share_width + ',height=' + social_share_height);
         }
       });
 
